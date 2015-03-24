@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h3 class="modal-title">Nuovo pagamento</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="form-group col-md-4 col-sm-4 col-xs-4">
+            <label>Data</label>
+            <p class="input-group" ng-controller="DatePickerController">
+                <input ng-model="current.date" type="text" class="form-control"
+                       datepicker-popup="dd.MM.yyyy"
+                       is-open="opened"
+                       ng-required="true" close-text="Chiudi" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group col-md-4 col-sm-4 col-xs-4">
+            <p>
+                <label for="type">Tipo</label>
+                <select class="form-control" id="type" ng-model="current.type">
+                    <option ng-repeat="t in PAYMENT_TYPES" value="{{t.type}}">{{t.name}}</option>
+                </select>
+            </p>
+        </div>
+        <div class="form-group col-md-4 col-sm-4 col-xs-4">
+            <label for="amount">Saldo</label>
+            <div class="input-group">
+                <span class="input-group-addon">€</span>
+                <input type="text" class="form-control" id="amount" ng-model="current.amount">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Chiudi</button>
+</div>

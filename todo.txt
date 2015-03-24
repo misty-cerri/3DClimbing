@@ -1,0 +1,20 @@
+﻿
+OK - Pagamento CAI (la cifra non è fissa)
+OK - Numero tessera (inserito a mano, autoincremento)
+OK - Inserimento accesso con selezione data (today di default) e selezione se accesso singolo
+OK - Controlli delle date da inizio anno e terven da maggio
+OK - Aggiungere controllo prova
+OK - Note campo libero
+OK - Richiesta conferma prima di importare il database
+OK - Cancellazione pagamenti e accessi se si cancella l'utente
+OK - Aggiunta pagamento se si aggiunge l'ingresso singolo
+OK - Aggiornamento date utente se si paga
+OK - Aggiornamento data ultima prova gratuita se accesso
+OK - Togliere nome operatore da editoperator.html
+OK - Aggiungere diritti operatore su editoperator.html
+OK - Testare import/export operatori
+OK - Controllo password uguale
+OK - Paginazione su manage.html per migliorare prestazioni
+- Validazione form
+- Testing con jasmine
+- Sistemare encoding (UTF-8) per esportazione db (si sminchiano i caratteri speciali)

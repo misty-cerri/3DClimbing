@@ -1,0 +1,144 @@
+<div class="modal-header">
+    <h3 class="modal-title">Dettaglio</h3>
+</div>
+<div class="modal-body">
+
+    <form role="form">
+        <div class="row">
+            <div class="form-group col-md-4">
+                <p>
+                    <label for="code">Numero tessera</label>
+                    <input type="number" class="form-control" id="code" ng-model="current.code">
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <p>
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" id="name" ng-model="current.name">
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <p>
+                    <label for="surname">Cognome</label>
+                    <input type="text" class="form-control" id="surname" ng-model="current.surname">
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <p>
+                    <label for="address">Indirizzo</label>
+                    <input type="text" class="form-control" id="address" ng-model="current.address">
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <p>
+                    <label for="phone">Telefono</label>
+                    <input type="text" class="form-control" id="phone" ng-model="current.phone">
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" ng-model="current.email">
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Data di nascita</label>
+                <p class="input-group" ng-controller="DatePickerController">
+                    <input ng-model="current.birthDate" type="text" class="form-control"
+                           datepicker-popup="dd.MM.yyyy"
+                           is-open="opened"
+                           ng-required="true" close-text="Chiudi" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Iscrizione terven</label>
+                <p class="input-group" ng-controller="DatePickerController">
+                    <input ng-model="current.tervenDate" type="text" class="form-control"
+                           datepicker-popup="dd.MM.yyyy"
+                           is-open="opened" datepicker-options="dateOptions"
+                           ng-required="true" close-text="Chiudi" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Iscrizione 3D Climbing</label>
+                <p class="input-group" ng-controller="DatePickerController">
+                    <input ng-model="current.climbDate" type="text" class="form-control" datepicker-popup="dd.MM.yyyy"
+                           is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                           ng-required="true" close-text="Chiudi" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Iscrizione CAI</label>
+                <p class="input-group" ng-controller="DatePickerController">
+                    <input ng-model="current.caiDate" type="text" class="form-control"
+                           datepicker-popup="dd.MM.yyyy"
+                           is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                           ng-required="true" close-text="Chiudi" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Data abbonamento</label>
+                <p class="input-group" ng-controller="DatePickerController">
+                    <input ng-model="current.subscriptionDate" type="text" class="form-control" datepicker-popup="dd.MM.yyyy"
+                           is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                           ng-required="true" close-text="Chiudi" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Ultima prova gratuita</label>
+                <p class="input-group" ng-controller="DatePickerController">
+                    <input ng-model="current.freeTrialDate" type="text" class="form-control" datepicker-popup="dd.MM.yyyy"
+                           is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                           ng-required="true" close-text="Chiudi" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="notes">Note</label>
+                <textarea class="form-control" id="notes" ng-model="current.notes" rows="2"></textarea>
+                <!--<input type="text" class="form-control" id="notes" ng-model="current.notes">-->
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Chiudi</button>
+</div>

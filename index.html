@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="3DC">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="style/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style/bootstrap-fileinput-master/css/fileinput.css" rel="stylesheet">
+    <!--<link href="angular/plugins/ngtable-0.3.2/ng-table.min.css" rel="stylesheet">-->
+    <link href="angular/plugins/ngtable-0.3.2/ng-table.css" rel="stylesheet">
+    <script src="angular/1.2.25/angular.min.js"></script>
+    <script src="angular/1.2.25/angular-route.min.js"></script>
+    <script src="angular/plugins/bootstrap/ui-bootstrap-0.11.2.min.js"></script>
+    <script src="angular/plugins/bootstrap/ui-bootstrap-tpls-0.11.2.min.js"></script>
+    <script src="angular/plugins/ngtable-0.3.2/ng-table.js"></script>
+    <!--<script src="angular/plugins/ngtable-0.3.2/ng-table.min.js"></script>-->
+    <script src="js/app.js"></script>
+    <script src="js/factories/datafactory.js"></script>
+    <script src="js/controllers/usercontroller.js"></script>
+    <script src="js/controllers/accesscontroller.js"></script>
+    <script src="js/controllers/paymentcontroller.js"></script>
+    <script src="js/controllers/admindbcontroller.js"></script>
+    <script src="js/controllers/adminoperatorscontroller.js"></script>
+    <script src="js/controllers/logincontroller.js"></script>
+    <script src="js/controllers/modaleditobjectcontroller.js"></script>
+    <script src="js/controllers/singledatepickercontroller.js"></script>
+    <script src="js/filters/filters.js"></script>
+    <script src="jquery/jquery-1.11.1.min.js"></script>
+    <script src="style/bootstrap-fileinput-master/js/fileinput.js"></script>
+    <script src="style/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">3D Climbing</a>
+        </div>
+        <ul class="nav navbar-nav ">
+            <!-- <li><a href="#"><i class="fa fa-home"></i> Login</a></li> -->
+            <li><a href="#manage"> Gestione palestra</a></li>
+            <!--<li><a href="#admin"><i class="fa fa-comment"></i> Admin</a></li>-->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle"> Admin</span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#admin-db">Database</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#admin-operators">Operatori</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="main" ng-view>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<div ng-controller="PaymentController as pc" ng-init="pc.init(current.key)">
+    <div class="modal-header">
+        <h3 class="modal-title">Pagamenti effettuati</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="col-md-10 col-sm-10 col-xs-10 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                <table class="table ng-table-responsive table-striped table-bordered" ng-table="tableParams">
+                    <tr ng-repeat="p in $data">
+                        <td data-title="'Data'" sortable="'date'">{{p.date | date:'dd/MM/yyyy'}}</td>
+                        <td data-title="'Operatore'" sortable="'operator'">{{p.operator}}</td>
+                        <td data-title="'Saldo'" sortable="'amount'">{{p.amount | currency:"€"}}</td>
+                        <td data-title="'Tipo'" sortable="'type'">
+                            {{PAYMENT_TYPES[p.type].name}}
+                        </td>
+                        <td>
+                            <a class="btn btn-xs" ng-click="pc.deletePayment(p)">
+                                <span class="glyphicon glyphicon-remove-circle"> Elimina</span>
+                            </a>
+                        </td>
+                    </tr>
+                    <!--
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <th>Data</th>
+                            <th>Operatore</th>
+                            <th>Saldo</th>
+                            <th>Tipo</th>
+                            <th></th>
+                        </tr>
+                        <tr ng-repeat="p in payments">
+                            <td>{{p.date | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.operator}}</td>
+                            <td>{{p.amount | currency:"€"}}</td>
+                            <td>{{PAYMENT_TYPES[p.type].name}}</td>
+                            <td>
+                                <a class="btn btn-xs" ng-click="pc.deletePayment(p)">
+                                    <span class="glyphicon glyphicon-remove-circle"> Elimina</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    -->
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <!--<button type="button" class="btn btn-primary" ng-click="ac.addAccess()">Nuovo accesso</button>-->
+        <button type="button" class="btn btn-primary" ng-click="pc.newPayment()">Nuovo pagamento</button>
+        <!--
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Aggiungi pagamento <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" >
+                <li class="pull-left" ng-repeat="t in paymentTypes"><a ng-click="pc.addPayment(t.type)">{{t.desc}}</a></li>
+            </ul>
+        </div>
+        -->
+        <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+        <button class="btn btn-warning" ng-click="cancel()">Chiudi</button>
+    </div>
+
+</div>

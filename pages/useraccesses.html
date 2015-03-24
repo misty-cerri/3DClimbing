@@ -1,0 +1,70 @@
+<div ng-controller="AccessController as ac" ng-init="ac.init(current.key)">
+    <div class="modal-header">
+        <h3 class="modal-title">Accessi alla palestra</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row">
+            <div class="col-md-10 col-sm-10 col-xs-10 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                <table class="table ng-table-responsive table-striped table-bordered" ng-table="tableParams">
+                    <tr ng-repeat="a in $data">
+                        <td data-title="'Data'" sortable="'date'">{{a.date | date:'dd/MM/yyyy'}}</td>
+                        <td data-title="'Operatore'" sortable="'operator'">{{a.operator}}</td>
+                        <td data-title="'Tipo'" sortable="'type'">
+                            {{ACCESS_TYPES[a.type].name}}
+                        </td>
+                        <td>
+                            <a class="btn btn-xs" ng-click="ac.deleteAccess(a)">
+                                <span class="glyphicon glyphicon-remove-circle"> Elimina</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th>Data</th>
+                        <th>Operatore</th>
+                        <th>Tipo</th>
+                        <th></th>
+                    </tr>
+                    <tr ng-repeat="a in accesses | orderBy: 'date':true ">
+                        <td>{{a.date | date:'dd/MM/yyyy'}}</td>
+                        <td>{{a.operator}}</td>
+                        <td>
+                            {{ACCESS_TYPES[a.type].name}}
+                        </td>
+                        <td>
+                            <a class="btn btn-xs" ng-click="ac.deleteAccess(a)">
+                                <span class="glyphicon glyphicon-remove-circle"> Elimina</span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="ac.newAccess()">Nuovo accesso</button>
+        <!--
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Aggiungi accesso <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu" role="menu" >
+                <li class="pull-left"><a ng-click="ac.addAccess(false)">Con abbonamento</a></li>
+                <li class="divider pull-left"></li>
+                <li class="pull-left"><a ng-click="ac.addAccess(true)">Accesso singolo (2€)</a></li>
+            </ul>
+        </div>
+        -->
+        <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+        <button class="btn btn-warning" ng-click="cancel()">Chiudi</button>
+    </div>
+
+</div>
